@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cờ Tư Lệnh Online</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main class="app-shell">
+    <header class="topbar"><div class="brand"><div class="brand-mark">CT</div><div><div class="eyebrow">STRATEGY BOARD GAME</div><h1>CỜ TƯ LỆNH <span>ONLINE</span></h1></div></div><div class="online-pill"><i></i> HỆ THỐNG SẴN SÀNG</div></header>
+    <section id="lobby" class="lobby-layout">
+      <div class="intro panel"><div class="tag">PHÒNG ĐẤU 1 VS 1</div><h2>Chỉ huy<br><em>trận đấu của bạn.</em></h2><p>Tạo phòng riêng, gửi mã mời cho bạn bè và chơi trên hai thiết bị khác nhau.</p><div class="feature-row"><div><b>01</b><span>Tạo phòng</span></div><div><b>02</b><span>Mời đối thủ</span></div><div><b>03</b><span>Vào bàn cờ</span></div></div></div>
+      <div class="join-card panel"><div class="section-kicker">BẮT ĐẦU</div><h3>Vào trận đấu</h3><label for="playerName">Tên hiển thị</label><input id="playerName" maxlength="18" placeholder="Nhập tên của bạn" value="Người chơi">
+        <button id="createBtn" class="primary">＋ TẠO PHÒNG MỚI</button><div class="or"><span>HOẶC THAM GIA</span></div><label for="roomCode">Mã phòng</label><input id="roomCode" maxlength="6" placeholder="VD: A1B2C3" class="code-input">
+        <button id="joinBtn" class="secondary">THAM GIA PHÒNG</button><p id="lobbyError" class="error"></p>
+      </div>
+    </section>
+    <section id="game" class="game-layout hidden">
+      <div class="game-heading"><div><div class="section-kicker">PHÒNG ĐẤU TRỰC TUYẾN</div><h2>Chiến trường <span id="roomLabel">------</span></h2></div><button id="copyBtn" class="copy-btn">▣ Sao chép mã mời</button></div>
+      <div class="game-columns"><aside class="side-panel panel"><div class="player-card red-card"><div class="avatar red-avatar">Đ</div><div><small>PHE ĐỎ</small><b id="redName">Đang chờ...</b><span id="redStatus">Chưa kết nối</span></div></div><div class="versus">VS</div><div class="player-card blue-card"><div class="avatar blue-avatar">X</div><div><small>PHE XANH</small><b id="blueName">Đang chờ...</b><span id="blueStatus">Chưa kết nối</span></div></div><div class="turn-box"><small>LƯỢT HIỆN TẠI</small><strong id="turnText">Chờ người chơi...</strong></div><button id="startBtn" class="primary start-btn">BẮT ĐẦU VÁN</button><p class="hint">Chủ phòng Đỏ bắt đầu ván khi cả hai người đã vào phòng.</p><div class="log-title">DIỄN BIẾN</div><ul id="logList" class="log-list"></ul><button id="leaveBtn" class="leave-btn">Rời phòng</button></aside>
+        <div class="board-panel panel"><div class="board-topline"><span>● CHIẾN TRƯỜNG</span><span>11 × 12 GIAO ĐIỂM</span></div><div class="board-wrap"><div id="board" class="board" aria-label="Bàn cờ 11 cột 12 hàng"></div></div><div class="board-footer"><span><i class="dot red-dot"></i> Phe Đỏ</span><span><i class="dot blue-dot"></i> Phe Xanh</span><span class="demo-note">Bàn thử nghiệm kết nối – chưa nạp đội hình quân chuẩn.</span></div></div></div>
+    </section>
+    <footer>PHIÊN BẢN KHỞI ĐẦU · HỆ THỐNG PHÒNG VÀ ĐỒNG BỘ 2 NGƯỜI</footer>
+  </main>
+  <div id="toast" class="toast"></div><script src="/socket.io/socket.io.js"></script><script src="game.js"></script>
+</body></html>
